@@ -171,3 +171,35 @@ body {
 .links a:hover {
   color: #fff;
 }
+
+.texto-animado {
+  position: absolute; /* o fixed si quieres que esté siempre visible al hacer scroll */
+  top: 30px;           /* distancia desde arriba */
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  font-size: 5rem;
+  font-weight: bold;
+  text-align: center;
+  background: url(./IMAGENES/fondoblancorojodorado.jpeg) center;
+  background-size: 150% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: animar-fondo 15s ease-in-out infinite;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  z-index: 900; /* Muy por encima del login */
+}
+
+/* Animación del fondo */
+@keyframes animar-fondo {
+    0% {
+        background-position: 0% center;
+    }
+    50% {
+        background-position: 100% center;
+    }
+    100% {
+        background-position: 0% center;
+    }
+}   
