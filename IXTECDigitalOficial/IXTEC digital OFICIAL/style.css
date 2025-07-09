@@ -1,0 +1,349 @@
+@keyframes neon-glow {
+  0%   { border-color: #D94A3F; box-shadow: 0 0 15px #D94A3F; }
+  12%  { border-color: #C1272D; box-shadow: 0 0 15px #C1272D; }
+  24%  { border-color: #A6192E; box-shadow: 0 0 15px #A6192E; }
+  36%  { border-color: #82001F; box-shadow: 0 0 15px #82001F; }
+  48%  { border-color: #B3B3B3; box-shadow: 0 0 15px #B3B3B3; }
+  60%  { border-color: #D9D9D9; box-shadow: 0 0 15px #D9D9D9; }
+  72%  { border-color: #F2E9DC; box-shadow: 0 0 15px #F2E9DC; }
+  84%  { border-color: #FAF7F0; box-shadow: 0 0 15px #FAF7F0; }
+  100% { border-color: #D94A3F; box-shadow: 0 0 15px #D94A3F; }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #000;
+  overflow-x: hidden; /* evita scroll horizontal */
+}
+
+.seccion-inicial {
+  position: relative;
+  background-image: url('/IXTEC digital OFICIAL/IMAGENES/FONDONUBES.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  overflow: hidden; /* evita que hijos absolutos salgan y causen scroll */
+}
+
+/* Imagen fija de fondo centrada, sin afectar scroll ni contenido */
+.imagen-fondo-central {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  max-width: 600px;
+  height: auto;
+  opacity: 0.5;
+  z-index: .5;
+  pointer-events: none;
+}
+
+.logo-superior {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100px;
+  height: auto;
+  z-index: 10;
+}
+
+.imagen-inferior {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 80px;
+  height: auto;
+  z-index: 10;
+}
+
+.contenido-central {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+}
+
+.imagen-central {
+  width: 150px;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.login-container {
+  position: relative;
+  width: 350px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 15px;
+  transition: all 0.5s ease;
+  border: 2px solid #D94A3F;
+  animation: neon-glow 10s linear infinite;
+  box-shadow: 0 0 15px #D94A3F;
+  z-index: 0;
+}
+
+.login-container:hover {
+  height: 400px;
+}
+
+.login-container::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 20px;
+  background: linear-gradient(
+    45deg,
+    #FAF7F0, #F2E9DC, #D9D9D9, #B3B3B3,
+    #D94A3F, #C1272D, #A6192E, #82001F
+  );
+  background-size: 300% 300%;
+  animation: neon-glow 10s linear infinite;
+  filter: blur(12px);
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.login-box {
+  position: relative;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  margin: 2px;
+  background: #111;
+  padding: 40px 40px 50px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-title {
+  color: white;
+  font-size: 28px;
+  margin: 0;
+  user-select: none;
+  transition: transform 0.3s ease, margin-bottom 0.3s ease, top 0.3s ease;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-container:hover .login-title {
+  position: relative;
+  top: 0;
+  left: 0;
+  transform: translateY(0);
+  margin-bottom: 20px;
+}
+
+.login-content {
+  opacity: 0;
+  height: 0;
+  transition: all 0.4s ease;
+  margin-top: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.login-container:hover .login-content {
+  opacity: 1;
+  height: auto;
+  margin-top: 20px;
+  overflow: visible;
+}
+
+.input-group {
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 18px;
+  background: #222;
+  border: 1.5px solid #333;
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+.input-group input:focus {
+  border-color: #D94A3F;
+  outline: none;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 15px 0;
+  background: #D94A3F;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 8px #D94A3F;
+}
+
+.login-btn:hover {
+  background: #A6192E;
+  box-shadow: 0 0 15px #A6192E;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.links a {
+  color: #aaa;
+  font-size: 15px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.links a:hover {
+  color: #fff;
+}
+
+.texto-animado {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  font-size: 5rem;
+  font-weight: bold;
+  text-align: center;
+  background: url(./IMAGENES/fondoblancorojodorado.jpeg) center;
+  background-size: 150% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: animar-fondo 15s ease-in-out infinite;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  z-index: 900;
+}
+
+@keyframes animar-fondo {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+.menu-principal {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;          /* Menú principal en línea horizontal */
+  background-color: #222;
+}
+
+.menu-principal > li {
+  position: relative;     /* Para que los submenús se posicionen respecto a este */
+}
+
+.menu-principal > li > a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.menu-principal > li:hover {
+  background-color: #D94A3F;
+}
+
+/* Submenú oculto */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;             /* Justo debajo del item padre */
+  left: 0;
+  background-color: #333;
+  min-width: 180px;
+  border-radius: 6px;
+  padding: 0.5rem 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Mostrar submenu al pasar cursor */
+.menu-principal > li:hover > .submenu {
+  display: block;
+}
+
+/* Items del submenu */
+.submenu li {
+  list-style: none;
+}
+
+.submenu li a {
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.submenu li a:hover {
+  background-color: #D94A3F;
+}
+
+/* Sub-submenú (si quieres) */
+.submenu li:hover > .submenu {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 100%;          /* Aparece a la derecha */
+  background-color: #444;
+  min-width: 160px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.pantalla-completa {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: black; /* Opcional */
+  position: relative;
+  overflow: hidden;
+}
+
+.pantalla-completa iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+

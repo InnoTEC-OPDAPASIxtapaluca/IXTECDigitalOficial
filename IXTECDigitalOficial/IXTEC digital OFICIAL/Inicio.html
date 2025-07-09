@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IXTEC Digital - Inicio</title>
+  <link rel="stylesheet" href="./style.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-image: url('/IXTEC digital OFICIAL/IMAGENES/fondoblanco.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    header img {
+      width: 80px;
+      margin-right: 1rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    nav {
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 1rem;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #D94A3F;
+    }
+
+    main {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .section {
+      background: rgba(0, 0, 0, 0.65);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .section h2 {
+      color: #D94A3F;
+      margin-top: 0;
+    }
+
+    .section p {
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="/IXTEC digital OFICIAL/IMAGENES/IXTEC.gif" alt="Logo IXTEC" />
+    <h1>IXTEC Digital</h1>
+  </header>
+
+  <nav>
+  <ul class="menu-principal">
+    <li class="menu">
+      <a href="#">Infraestructura</a>
+      <ul class="submenu">
+        <li>
+          <a href="#">Pozos</a>
+          <ul class="submenu">
+            <li><a href="#pozos">Mapa</a></li>
+            <li><a href="#">Lista</a></li>
+          </ul>
+        </li> 
+        <li><a href="#">Carcamos</a>
+        <ul class="submenu">
+            <li><a href="#carcamos">Mapa 2</a></li>
+            <li><a href="#">Lista</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Presas de Gavión</a></li>
+      </ul>
+    </li>
+    <li class="menu">
+      <a href="#">Gaceta</a>
+      <ul class="submenu">
+        <li>
+          <a href="#">Colonias</a>
+          <ul class="submenu">
+            <li><a href="#">Colonia 1</a></li>
+            <li><a href="#">Colonia 2</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Servicios</a>
+          <ul class="submenu">
+            <li><a href="#">Servicio 1</a></li>
+            <li><a href="#">Servicio 2</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  <section id="pozos" class="pantalla-completa seccion-oculta">
+  <iframe 
+    src="https://lookerstudio.google.com/embed/reporting/abcd89c2-3799-4dbb-892e-c563e5c0c10d/page/uNPQF" 
+    frameborder="0" 
+    allowfullscreen 
+    sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+  </iframe>
+</section>
+<section id="carcamos" class="pantalla-completa seccion-oculta">
+  <iframe 
+    src="https://lookerstudio.google.com/u/0/reporting/0b8b52cf-d55e-439f-8643-0bf7cebea232" 
+    allowfullscreen 
+    sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+  </iframe>
+</section>
+
+   </body>
+</html>
